@@ -3,7 +3,7 @@ package mysql.Controllers;
 import mysql.DataBaseConnection;
 import mysql.Models.Bookings;
 import mysql.Models.Manage;
-import mysql.view.shopView4;
+import mysql.view.View4;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import static java.lang.Character.isDigit;
 
 public class Controller4 {
-    private shopView4 view4;
+    private View4 view4;
     private Manage manage;
     private DataBaseConnection dataBaseConnection;
     private int guest_id;
@@ -26,7 +26,7 @@ public class Controller4 {
     private java.util.Date data;
     private int room;//room-id
 
-    public Controller4(shopView4 view4, Manage manage, DataBaseConnection dataBaseConnection, int guest_id) {
+    public Controller4(View4 view4, Manage manage, DataBaseConnection dataBaseConnection, int guest_id) {
         this.view4 = view4;
         this.manage = manage;
         this.dataBaseConnection = dataBaseConnection;

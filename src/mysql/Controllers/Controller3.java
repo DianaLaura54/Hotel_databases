@@ -3,9 +3,9 @@ package mysql.Controllers;
 import mysql.DataBaseConnection;
 import mysql.Models.Manage;
 import mysql.Models.Rooms;
-import mysql.view.shopView2;
-import mysql.view.shopView3;
-import mysql.view.shopView5;
+import mysql.view.View2;
+import mysql.view.View3;
+import mysql.view.View5;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class Controller3 {
-    private shopView3 view3;
+    private View3 view3;
     private Manage manage;
     private DataBaseConnection dataBaseConnection;
     private int id;
@@ -22,7 +22,7 @@ public class Controller3 {
     private int j;
     private int guest_id;
 
-    public Controller3(shopView3 view3, Manage manage, DataBaseConnection dataBaseConnection, int id, int cod, int guest_id) {
+    public Controller3(View3 view3, Manage manage, DataBaseConnection dataBaseConnection, int id, int cod, int guest_id) {
         this.view3 = view3;
         this.manage = manage;
         this.dataBaseConnection = dataBaseConnection;
@@ -38,7 +38,7 @@ public class Controller3 {
         public void actionPerformed(ActionEvent e) {
             try {
                 view3.dispose();
-                shopView2 view2 = new shopView2();
+                View2 view2 = new View2();
                 Controller2 controller2 = new Controller2(view2, manage, dataBaseConnection, id, guest_id);
             } catch (Exception ex) {
                 view3.showMessage("Something went wrong!");
@@ -100,7 +100,7 @@ public class Controller3 {
 
                     view3.showMessage("proceed to booking");
                     view3.dispose();
-                    shopView5 view5 = new shopView5();
+                    View5 view5 = new View5();
                     Controller5 controller5 = new Controller5(view5, manage, dataBaseConnection, cod, guest_id, nr);
                 } else {
                     view3.showMessage("bad input");

@@ -4,31 +4,32 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class shopView5 extends JFrame {
+public class View5 extends JFrame {
     private JLabel staffLabel;
-    private  JComboBox staffcomboBox;
+    private JComboBox staffcomboBox;
     private JLabel fromLabel;
-    private  JLabel bookingLabel;
+    private JLabel bookingLabel;
     private JLabel toLabel;
     private JTextField fromtextField;
     private JTextField totextField;
     private JButton bookButton;
     private JLabel payLabel;
-    private  JTextField paytextField;
+    private JTextField paytextField;
     private JLabel totalLabel;
-    private  JTextArea totaltextArea;
-   private  JButton payButton;
-   private JButton  staffButton;
-   private  JButton showButton;
-    public shopView5()
-    {this.setResizable(false);
+    private JTextArea totaltextArea;
+    private JButton payButton;
+    private JButton staffButton;
+    private JButton showButton;
+
+    public View5() {
+        this.setResizable(false);
         this.setBounds(100, 100, 887, 664);
         this.getContentPane().setForeground(new Color(128, 0, 0));
         this.getContentPane().setBackground(new Color(178, 34, 34));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setLayout(null);
 
-         staffLabel = new JLabel("Choose staff");
+        staffLabel = new JLabel("Choose staff");
         staffLabel.setFont(new Font("Georgia", Font.PLAIN, 25));
         staffLabel.setBounds(114, 148, 190, 30);
         getContentPane().add(staffLabel);
@@ -39,7 +40,7 @@ public class shopView5 extends JFrame {
         staffcomboBox.setBounds(81, 214, 236, 30);
         getContentPane().add(staffcomboBox);
 
-         fromLabel = new JLabel("Date  from");
+        fromLabel = new JLabel("Date  from");
         fromLabel.setFont(new Font("Georgia", Font.PLAIN, 25));
         fromLabel.setBounds(525, 119, 222, 30);
         getContentPane().add(fromLabel);
@@ -49,7 +50,7 @@ public class shopView5 extends JFrame {
         bookingLabel.setBounds(307, 29, 366, 41);
         getContentPane().add(bookingLabel);
 
-         toLabel = new JLabel("Date  to");
+        toLabel = new JLabel("Date  to");
         toLabel.setFont(new Font("Georgia", Font.PLAIN, 25));
         toLabel.setBounds(525, 270, 222, 30);
         getContentPane().add(toLabel);
@@ -68,13 +69,13 @@ public class shopView5 extends JFrame {
         totextField.setBounds(488, 333, 281, 54);
         getContentPane().add(totextField);
 
-         bookButton = new JButton("Book");
+        bookButton = new JButton("Book");
         bookButton.setFont(new Font("Georgia", Font.PLAIN, 20));
         bookButton.setBackground(new Color(218, 165, 32));
         bookButton.setBounds(64, 349, 281, 47);
         getContentPane().add(bookButton);
 
-         payLabel = new JLabel("Pay a sum");
+        payLabel = new JLabel("Pay a sum");
         payLabel.setFont(new Font("Georgia", Font.PLAIN, 25));
         payLabel.setBounds(509, 426, 222, 30);
         getContentPane().add(payLabel);
@@ -91,7 +92,7 @@ public class shopView5 extends JFrame {
         totalLabel.setBounds(64, 460, 222, 30);
         getContentPane().add(totalLabel);
 
-       totaltextArea = new JTextArea();
+        totaltextArea = new JTextArea();
         totaltextArea.setFont(new Font("Georgia", Font.PLAIN, 20));
         totaltextArea.setBounds(64, 496, 253, 47);
         totaltextArea.setBackground(new Color(240, 128, 128));
@@ -116,6 +117,7 @@ public class shopView5 extends JFrame {
         getContentPane().add(showButton);
         this.setVisible(true);
     }
+
     public String gettotextField() {
         return totextField.getText();
     }
@@ -131,17 +133,17 @@ public class shopView5 extends JFrame {
     public void setfromtextField(String fromtextField) {
         this.fromtextField.setText(fromtextField);
     }
-    public void clearstaffcomboBox()
-    {
+
+    public void clearstaffcomboBox() {
         this.staffcomboBox.removeAllItems();
 
     }
-    public String getstaffcomboBox()
-    {
+
+    public String getstaffcomboBox() {
         return staffcomboBox.getSelectedItem().toString();
     }
-    public void setstaffcomboBox(Object item)
-    {
+
+    public void setstaffcomboBox(Object item) {
         this.staffcomboBox.addItem(item);
     }
 
@@ -158,24 +160,25 @@ public class shopView5 extends JFrame {
     }
 
     public void setpaytextField(int paytextField) {
-        this. paytextField.setText(String.valueOf(paytextField));
+        this.paytextField.setText(String.valueOf(paytextField));
     }
-    public void addShowListener(ActionListener action)
-    {
+
+    public void addShowListener(ActionListener action) {
         showButton.addActionListener(action);
     }
-    public void addCreateListener(ActionListener action)
-    {
+
+    public void addCreateListener(ActionListener action) {
         staffButton.addActionListener(action);
     }
-    public void addCreateListener2(ActionListener action)
-    {
+
+    public void addCreateListener2(ActionListener action) {
         bookButton.addActionListener(action);
     }
-    public void addCreateListener3(ActionListener action)
-    {
+
+    public void addCreateListener3(ActionListener action) {
         payButton.addActionListener(action);
     }
+
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
     }

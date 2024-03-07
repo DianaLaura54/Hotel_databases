@@ -4,10 +4,10 @@ package mysql.Controllers;
 import mysql.Models.Hotels;
 import mysql.Models.Manage;
 import mysql.Models.room_types;
-import mysql.view.shopView;
+import mysql.view.View;
 import mysql.DataBaseConnection;
-import mysql.view.shopView2;
-import mysql.view.shopView4;
+import mysql.view.View2;
+import mysql.view.View4;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,7 +17,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Controller {
-    private shopView view;
+    private View view;
     private Manage manage;
     private DataBaseConnection dataBaseConnection;
     private int ok = 0;
@@ -25,7 +25,7 @@ public class Controller {
     private int guest_id;
 
 
-    public Controller(shopView view, Manage manage, DataBaseConnection dataBaseConnection) {
+    public Controller(View view, Manage manage, DataBaseConnection dataBaseConnection) {
         this.view = view;
         this.manage = manage;
         this.dataBaseConnection = dataBaseConnection;
@@ -150,7 +150,7 @@ public class Controller {
             try {
                 if (ok == 1 || ok == 2) {
                     view.dispose();
-                    shopView2 view2 = new shopView2();
+                    View2 view2 = new View2();
                     Controller2 controller2 = new Controller2(view2, manage, dataBaseConnection, cod, guest_id);
                 } else {
                     view.showMessage("you haven't signed in");
@@ -169,7 +169,7 @@ public class Controller {
                     view.showMessage("you didn't make a booking yet");
                 } else if (ok == 2) {
                     view.dispose();
-                    shopView4 view4 = new shopView4();
+                    View4 view4 = new View4();
                     Controller4 controller4 = new Controller4(view4, manage, dataBaseConnection, guest_id);
                 } else {
                     view.showMessage("you haven't signed in");

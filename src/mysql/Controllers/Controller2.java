@@ -3,8 +3,8 @@ package mysql.Controllers;
 import mysql.DataBaseConnection;
 import mysql.Models.Hotels;
 import mysql.Models.Manage;
-import mysql.view.shopView2;
-import mysql.view.shopView3;
+import mysql.view.View2;
+import mysql.view.View3;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +14,7 @@ import java.sql.ResultSet;
 
 public class Controller2 {
 
-    private shopView2 view2;
+    private View2 view2;
     private Manage manage;
     private DataBaseConnection dataBaseConnection;
     private int id;
@@ -24,7 +24,7 @@ public class Controller2 {
     private int guest_id;
     private int id_hotel;
 
-    public Controller2(shopView2 view2, Manage manage, DataBaseConnection dataBaseConnection, int id, int guest_id) {
+    public Controller2(View2 view2, Manage manage, DataBaseConnection dataBaseConnection, int id, int guest_id) {
         this.view2 = view2;
         this.manage = manage;
         this.dataBaseConnection = dataBaseConnection;
@@ -114,7 +114,7 @@ public class Controller2 {
                     view2.showMessage("please pick a hotel first");
                 } else if (verify == 1) {
                     view2.dispose();
-                    shopView3 view3 = new shopView3();
+                    View3 view3 = new View3();
                     Controller3 controller3 = new Controller3(view3, manage, dataBaseConnection, id, id_hotel, guest_id);
                 }
             } catch (Exception ex) {

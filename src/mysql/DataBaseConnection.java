@@ -1,6 +1,6 @@
 package mysql;
 
-import mysql.view.shopView2;
+import mysql.view.View2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,7 @@ public class DataBaseConnection {
     private final String ssl;
     private final String username;
     private final String password;
-    private shopView2 view;
+    private View2 view;
 
     public DataBaseConnection() {
         driver = "com.mysql.cj.jdbc.Driver";
@@ -21,12 +21,6 @@ public class DataBaseConnection {
         ssl = "?autoReconnect=true&useSSL=false";
         username = "root";
         password = "fizica";
-    }
-
-    public Connection getConnection() throws Exception {
-        Class.forName(driver);
-
-        return DriverManager.getConnection(connectionURL + dbName + ssl, username, password);
     }
 
     public static void main(String[] args) {
@@ -38,5 +32,11 @@ public class DataBaseConnection {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public Connection getConnection() throws Exception {
+        Class.forName(driver);
+
+        return DriverManager.getConnection(connectionURL + dbName + ssl, username, password);
     }
 }
