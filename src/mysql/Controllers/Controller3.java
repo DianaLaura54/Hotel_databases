@@ -31,7 +31,7 @@ public class Controller3 {
         this.view3.addCreateListener(new Controller3.CreateListener());
         this.id = id;
         this.cod = cod;
-        this.guest_id=guest_id;
+        this.guest_id = guest_id;
     }
 
     class SelectListener implements ActionListener {
@@ -39,7 +39,7 @@ public class Controller3 {
             try {
                 view3.dispose();
                 shopView2 view2 = new shopView2();
-                Controller2 controller2 = new Controller2(view2, manage, dataBaseConnection, id,guest_id);
+                Controller2 controller2 = new Controller2(view2, manage, dataBaseConnection, id, guest_id);
             } catch (Exception ex) {
                 view3.showMessage("Something went wrong!");
                 ex.printStackTrace();
@@ -63,10 +63,10 @@ public class Controller3 {
 
                     String room_type_code = result.getString(4);
                     String smoking = result.getString(5);
-                    int available=result.getInt(6);
-                    int room_price=result.getInt(7);
+                    int available = result.getInt(6);
+                    int room_price = result.getInt(7);
 
-                    manage.getRooms().add(new Rooms(room_id, room_floor, room_number, room_type_code, smoking,available,room_price));
+                    manage.getRooms().add(new Rooms(room_id, room_floor, room_number, room_type_code, smoking, available, room_price));
                 }
                 view3.setroomstextArea(manage.getRooms().toString());
                 connection.close();
@@ -79,7 +79,8 @@ public class Controller3 {
 
     class CreateListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            try {Connection connection = dataBaseConnection.getConnection();
+            try {
+                Connection connection = dataBaseConnection.getConnection();
                 int nr = view3.getnrtextField();
                 int y = 0;
                 for (int i = 0; i < manage.getRooms().size(); i++) {
@@ -94,13 +95,13 @@ public class Controller3 {
                     manage.getRooms().get(j).setAvailable(0);
                     String sql = "update rooms set available='0' where room_id=?";
                     p = connection.prepareStatement(sql);
-                    p.setInt(1,nr);
+                    p.setInt(1, nr);
                     p.execute();
 
                     view3.showMessage("proceed to booking");
                     view3.dispose();
                     shopView5 view5 = new shopView5();
-                    Controller5 controller5 = new Controller5(view5, manage, dataBaseConnection,cod,guest_id,nr);
+                    Controller5 controller5 = new Controller5(view5, manage, dataBaseConnection, cod, guest_id, nr);
                 } else {
                     view3.showMessage("bad input");
                 }

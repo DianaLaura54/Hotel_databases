@@ -4,10 +4,9 @@ public class Staff {
     private String last_name;
     private String first_name;
 
-    public Staff(String last_name,String first_name)
-    {
-        this.last_name=last_name;
-        this.first_name=first_name;
+    public Staff(String last_name, String first_name) {
+        this.last_name = last_name;
+        this.first_name = first_name;
 
     }
 

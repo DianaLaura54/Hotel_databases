@@ -6,12 +6,11 @@ public class Bookings {
     private String from;
     private String booking_status_code;
 
-    public Bookings(int booking_id,String to,String from,String booking_status_code)
-    {
-this.booking_id=booking_id;
-this.to=to;
-this.from=from;
-this.booking_status_code=booking_status_code;
+    public Bookings(int booking_id, String to, String from, String booking_status_code) {
+        this.booking_id = booking_id;
+        this.to = to;
+        this.from = from;
+        this.booking_status_code = booking_status_code;
     }
 
     public int getBooking_id() {

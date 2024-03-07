@@ -29,7 +29,7 @@ public class Controller2 {
         this.manage = manage;
         this.dataBaseConnection = dataBaseConnection;
         this.id = id;
-        this.guest_id=guest_id;
+        this.guest_id = guest_id;
         this.view2.addShowListener(new Controller2.SelectListener());
         this.view2.add2ShowListener(new Controller2.SelectListener2());
         this.view2.addCreateListener(new Controller2.CreateListener());
@@ -59,8 +59,8 @@ public class Controller2 {
                 while (result2.next()) {
                     String name = result2.getString(5);
                     String name2 = result2.getString(6);
-                    int stars=result2.getInt(4);
-                    manage.getHotels().add(new Hotels(name, name2,stars));
+                    int stars = result2.getInt(4);
+                    manage.getHotels().add(new Hotels(name, name2, stars));
                     view2.sethotelcomboBox(name);
                     ok = 1;
                 }
@@ -89,13 +89,11 @@ public class Controller2 {
                     Connection connection = dataBaseConnection.getConnection();
                     PreparedStatement preparedStatement = connection.prepareStatement("Select * from hotel");
                     ResultSet result2 = preparedStatement.executeQuery();
-                    while(result2.next())
-                    {
-                        String str=result2.getString(5);
+                    while (result2.next()) {
+                        String str = result2.getString(5);
 
-                        if(s.equals(str))
-                        {
-                        id_hotel=result2.getInt(1);
+                        if (s.equals(str)) {
+                            id_hotel = result2.getInt(1);
                         }
                     }
 
@@ -117,7 +115,7 @@ public class Controller2 {
                 } else if (verify == 1) {
                     view2.dispose();
                     shopView3 view3 = new shopView3();
-                    Controller3 controller3 = new Controller3(view3, manage, dataBaseConnection, id, id_hotel,guest_id);
+                    Controller3 controller3 = new Controller3(view3, manage, dataBaseConnection, id, id_hotel, guest_id);
                 }
             } catch (Exception ex) {
                 view2.showMessage("Something went wrong!");

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Manage {
+    Map map = new HashMap();
     private String name;
     private List<Hotels> hotels;
     private List<room_types> room_types;
@@ -13,20 +14,18 @@ public class Manage {
     private List<Rooms> rooms;
     private List<Staff> staff;
     private List<Bookings> bookings;
-    Map map=new HashMap();
 
-    public Manage(String name)
-    {
-        this.name=name;
-        this.hotels=new ArrayList<>();
-        this.room_types=new ArrayList<>();
-        this.guest=new ArrayList<>();
-        this.rooms=new ArrayList<>();
-        this.staff=new ArrayList<>();
-        this.bookings=new ArrayList<>();
+    public Manage(String name) {
+        this.name = name;
+        this.hotels = new ArrayList<>();
+        this.room_types = new ArrayList<>();
+        this.guest = new ArrayList<>();
+        this.rooms = new ArrayList<>();
+        this.staff = new ArrayList<>();
+        this.bookings = new ArrayList<>();
     }
 
-    public  List<Hotels> getHotels() {
+    public List<Hotels> getHotels() {
         return hotels;
     }
 

@@ -5,13 +5,13 @@ public class room_types {
     private int room_standard_price;
     private String room_description;
 
-    public room_types(int room_standard_price,String room_description)
-    {
+    public room_types(int room_standard_price, String room_description) {
 
-        this.room_standard_price=room_standard_price;
-        this.room_description=room_description;
+        this.room_standard_price = room_standard_price;
+        this.room_description = room_description;
 
     }
+
     public int getRoom_standard_price() {
         return room_standard_price;
     }
@@ -31,6 +31,6 @@ public class room_types {
     @Override
     public String toString() {
         return "room_standard_price=" + room_standard_price +
-                ", room_description='" + room_description +"\n";
+                ", room_description='" + room_description + "\n";
     }
 }

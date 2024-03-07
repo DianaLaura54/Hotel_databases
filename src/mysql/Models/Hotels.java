@@ -4,11 +4,11 @@ public class Hotels {
     private String hotel_name;
     private String hotel_address;
     private int stars;
-    public Hotels(String hotel_name,String hotel_address,int stars)
-    {
- this.hotel_name=hotel_name;
- this.hotel_address=hotel_address;
- this.stars=stars;
+
+    public Hotels(String hotel_name, String hotel_address, int stars) {
+        this.hotel_name = hotel_name;
+        this.hotel_address = hotel_address;
+        this.stars = stars;
     }
 
     public String getHotel_name() {
@@ -31,8 +31,8 @@ public class Hotels {
     public String toString() {
         return
                 "hotel_name='" + hotel_name + '\'' +
-                ", hotel_address='" + hotel_address + '\'' +
-                ", stars=" + stars +
-                "\n";
+                        ", hotel_address='" + hotel_address + '\'' +
+                        ", stars=" + stars +
+                        "\n";
     }
 }

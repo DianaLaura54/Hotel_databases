@@ -1,13 +1,13 @@
 package mysql.Models;
 
 public class booking_status {
-private int booking_status_code;
-private String booking_status_description;
-public booking_status(int booking_status_code,String booking_status_description)
-{
-    this.booking_status_description=booking_status_description;
-    this.booking_status_code=booking_status_code;
-}
+    private int booking_status_code;
+    private String booking_status_description;
+
+    public booking_status(int booking_status_code, String booking_status_description) {
+        this.booking_status_description = booking_status_description;
+        this.booking_status_code = booking_status_code;
+    }
 
     public int getBooking_status_code() {
         return booking_status_code;

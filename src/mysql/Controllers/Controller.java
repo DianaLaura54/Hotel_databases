@@ -56,8 +56,8 @@ public class Controller {
                     while (result2.next()) {
                         String name = result2.getString(5);
                         String name2 = result2.getString(6);
-                        int stars=result2.getInt(4);
-                        manage.getHotels().add(new Hotels(name, name2,stars));
+                        int stars = result2.getInt(4);
+                        manage.getHotels().add(new Hotels(name, name2, stars));
                     }
                     PreparedStatement pst3 = connection.prepareStatement("Select room_standard_price,room_description from room_types where country_code=?");
                     pst3.setInt(1, id);
@@ -95,7 +95,7 @@ public class Controller {
                             alreadyExists = true;
 
                         }
-                        guest_id=result.getInt(1);
+                        guest_id = result.getInt(1);
                     }
                     if (alreadyExists) {
                         view.showErrorMessage("Account already exists!");
@@ -128,7 +128,7 @@ public class Controller {
                 while (result.next() && !alreadyExists) {
                     if (result.getString(2).equals(view.getEmailTextField())) {
                         alreadyExists = true;
-                       guest_id=result.getInt(1);
+                        guest_id = result.getInt(1);
                     }
                 }
                 if (alreadyExists) {
@@ -148,31 +148,30 @@ public class Controller {
     class CreateListener2 implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             try {
-                if (ok == 1 || ok == 2)
-                    {view.dispose();
-                        shopView2 view2 = new shopView2();
-                    Controller2 controller2 = new Controller2(view2, manage, dataBaseConnection, cod,guest_id);}
-                    else {view.showMessage("you haven't signed in");}
+                if (ok == 1 || ok == 2) {
+                    view.dispose();
+                    shopView2 view2 = new shopView2();
+                    Controller2 controller2 = new Controller2(view2, manage, dataBaseConnection, cod, guest_id);
+                } else {
+                    view.showMessage("you haven't signed in");
                 }
-             catch (Exception ex) {
+            } catch (Exception ex) {
                 view.showMessage("Something went wrong!");
                 ex.printStackTrace();
             }
         }
     }
+
     class CreateListener3 implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             try {
                 if (ok == 1) {
-view.showMessage("you didn't make a booking yet");
-                }
-                else if(ok==2)
-                { view.dispose();
+                    view.showMessage("you didn't make a booking yet");
+                } else if (ok == 2) {
+                    view.dispose();
                     shopView4 view4 = new shopView4();
-                    Controller4 controller4 = new Controller4(view4, manage, dataBaseConnection,guest_id);
-                }
-                else
-                {
+                    Controller4 controller4 = new Controller4(view4, manage, dataBaseConnection, guest_id);
+                } else {
                     view.showMessage("you haven't signed in");
                 }
             } catch (Exception ex) {

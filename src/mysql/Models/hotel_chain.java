@@ -2,9 +2,9 @@ package mysql.Models;
 
 public class hotel_chain {
     private String name;
-    public hotel_chain(String name)
-    {
-        this.name=name;
+
+    public hotel_chain(String name) {
+        this.name = name;
     }
 
     public String getName() {
