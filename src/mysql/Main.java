@@ -1,17 +1,17 @@
 package mysql;
 
 
-import mysql.Controllers.Controller;
-import mysql.Models.Manage;
-import mysql.view.View;
+import mysql.controller.MainController;
+import mysql.model.Manage;
+import mysql.view.MainView;
 
 public class Main {
     public static void main(String[] args) {
 
         Manage manage = new Manage("management");
-        View view = new View();
+        MainView view = new MainView();
         DataBaseConnection dataBaseConnection = new DataBaseConnection();
-        Controller controller = new Controller(view, manage, dataBaseConnection);
+        MainController controller = new MainController(view, manage, dataBaseConnection);
 
     }
 }

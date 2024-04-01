@@ -1,6 +1,6 @@
 package mysql;
 
-import mysql.view.View2;
+import mysql.view.ChooseView;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,7 @@ public class DataBaseConnection {
     private final String ssl;
     private final String username;
     private final String password;
-    private View2 view;
+    private ChooseView view;
 
     public DataBaseConnection() {
         driver = "com.mysql.cj.jdbc.Driver";
