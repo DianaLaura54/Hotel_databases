@@ -16,11 +16,11 @@ public class DataBaseConnection {
 
     public DataBaseConnection() {
         driver = "com.mysql.cj.jdbc.Driver";
-        connectionURL = "jdbc:mysql://localhost:3305/";
+        connectionURL = "jdbc:mysql://localhost:3306/";
         dbName = "mainn";
         ssl = "?autoReconnect=true&useSSL=false";
         username = "root";
-        password = "1969";
+        password = "Fizica1969*";
     }
 
     public static void main(String[] args) {
